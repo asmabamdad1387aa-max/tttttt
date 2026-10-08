@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7dfe7">
+  <title>فقط برای تو ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --pink:#f7dfe7; --pink2:#fbeef2; --rose:#c96b83;
+      --red:#a92748; --ink:#171416; --muted:#766d71; --paper:#fffafb;
+      --line:rgba(23,20,22,.10);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;background:var(--paper);color:var(--ink);
+      font-family:"Vazirmatn",sans-serif;font-weight:400;
+    }
+    button{font:inherit}
+    .hero{
+      min-height:100svh;display:flex;align-items:center;justify-content:center;
+      position:relative;overflow:hidden;background:
+      radial-gradient(circle at 75% 20%,rgba(255,255,255,.9),transparent 26%),
+      radial-gradient(circle at 15% 80%,rgba(255,210,224,.55),transparent 32%),
+      linear-gradient(145deg,#fffafa,#f7dfe7 58%,#f2cbd7);
+    }
+    .hero:before,.hero:after{
+      content:"";position:absolute;border:1px solid rgba(169,39,72,.14);
+      border-radius:50%;pointer-events:none;
+    }
+    .hero:before{width:55vw;height:55vw;max-width:560px;max-height:560px;left:-22vw;bottom:-28vw}
+    .hero:after{width:30vw;height:30vw;right:-12vw;top:-12vw}
+    .hero-inner{text-align:center;position:relative;z-index:2;padding:32px}
+    .eyebrow{font-size:12px;letter-spacing:.22em;color:var(--rose);margin-bottom:28px}
+    h1{
+      margin:0;font-size:clamp(42px,11vw,92px);font-weight:500;letter-spacing:-.045em;
+      line-height:1.1;
+    }
+    .heart{display:inline-block;color:var(--red);font-size:.55em;vertical-align:top;margin:0 5px;
+      animation:float 3s ease-in-out infinite}
+    .enter{
+      margin-top:38px;border:1px solid rgba(23,20,22,.18);background:rgba(255,255,255,.42);
+      color:var(--ink);border-radius:999px;padding:13px 27px;cursor:pointer;
+      transition:.3s;backdrop-filter:blur(8px);
+    }
+    .enter:hover{background:#fff;transform:translateY(-2px);border-color:rgba(169,39,72,.35)}
+    .hint{margin-top:16px;font-size:11px;color:var(--muted)}
+    @keyframes float{50%{transform:translateY(-5px)}}
+
+    main{max-width:850px;margin:auto;padding:80px 22px 90px}
+    .section{padding:52px 0;border-bottom:1px solid var(--line)}
+    .section:last-child{border-bottom:0}
+    .label{font-size:11px;letter-spacing:.15em;color:var(--rose);margin-bottom:18px}
+    h2{font-size:28px;font-weight:500;margin:0 0 20px}
+    .message{
+      min-height:160px;padding:30px;border-radius:28px;background:linear-gradient(135deg,#fff,#fdf0f4);
+      border:1px solid var(--line);color:#30282b;line-height:2.2;white-space:pre-wrap;
+    }
+    .voice-card{
+      background:#171416;color:white;border-radius:30px;padding:28px;
+      box-shadow:0 20px 60px rgba(23,20,22,.13)
+    }
+    .voice-top{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .voice-title{font-size:18px}.voice-sub{font-size:11px;color:#cfc6c9;margin-top:7px}
+    .play{
+      width:54px;height:54px;border-radius:50%;border:0;background:#f1b9c8;color:#171416;
+      cursor:pointer;font-size:20px;flex:none
+    }
+    audio{width:100%;margin-top:24px;opacity:.9}
+    .photo-placeholder{
+      min-height:330px;border-radius:30px;border:1px dashed rgba(169,39,72,.35);
+      background:linear-gradient(135deg,#fff7f9,#f8dfe7);
+      display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;
+      overflow:hidden;position:relative
+    }
+    .photo-placeholder img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;display:none}
+    .photo-placeholder.has-image img{display:block}
+    .photo-placeholder.has-image .placeholder-content{display:none}
+    .placeholder-content{color:#6e5f64}.placeholder-content strong{display:block;color:#30282b;margin-bottom:8px}
+    .upload{
+      margin-top:16px;border:1px solid var(--line);background:white;padding:11px 18px;border-radius:999px;cursor:pointer
+    }
+    input[type=file]{display:none}
+    footer{text-align:center;color:#8c7d82;font-size:11px;padding-top:20px}
+    .signature{margin-top:30px;font-family:"Playfair Display",serif;font-size:25px;direction:ltr}
+    .fade{opacity:0;transform:translateY(18px);transition:1s ease}
+    .fade.show{opacity:1;transform:none}
+    @media(max-width:600px){main{padding-top:45px}.section{padding:38px 0}.message{padding:23px;min-height:190px}.photo-placeholder{min-height:270px}}
+  </style>
+</head>
+<body>
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="eyebrow">A LITTLE SOMETHING</div>
+      <h1>فقط برای تو <span class="heart">♡</span></h1>
+      <button class="enter" onclick="document.getElementById('content').scrollIntoView({behavior:'smooth'})">بیا داخل</button>
+      <div class="hint">این صفحه فقط یک مهمان دارد.</div>
+    </div>
+  </section>
+
+  <main id="content">
+    <section class="section fade">
+      <div class="label">01 · FOR ALAA</div>
+      <h2>خانوم آلاء</h2>
+      <div class="message" id="message">[ اینجا متن تولد و حرف‌هایی که می‌خواهی برای آلاء بنویسی قرار می‌گیرد. ]
+
+فعلاً این قسمت خالی است؛ متن خودت را بعداً جایگزین کن.</div>
+    </section>
+
+    <section class="section fade">
+      <div class="label">02 · A VOICE FOR YOU</div>
+      <h2>یه چیزی هست که می‌خوام بشنوی</h2>
+      <div class="voice-card">
+        <div class="voice-top">
+          <div>
+            <div class="voice-title">صدای من برای تو</div>
+            <div class="voice-sub">ویس تولد را بعداً اینجا قرار بده.</div>
+          </div>
+          <button class="play" id="playBtn" aria-label="پخش ویس">▶</button>
+        </div>
+        <audio id="audio" controls preload="metadata"></audio>
+        <label class="upload" for="audioFile">انتخاب ویس</label>
+        <input id="audioFile" type="file" accept="audio/*">
+      </div>
+    </section>
+
+    <section class="section fade">
+      <div class="label">03 · ONE DAY</div>
+      <h2>یک جای خالی برای یک خاطره</h2>
+      <div class="photo-placeholder" id="photoBox">
+        <img id="photo" alt="عکس خاطره">
+        <div class="placeholder-content">
+          <strong>عکس شما</strong>
+          <span>فعلاً خالی است؛ هر وقت خواستی عکس را اضافه کن.</span>
+          <br>
+          <label class="upload" for="photoFile">انتخاب عکس</label>
+        </div>
+      </div>
+      <input id="photoFile" type="file" accept="image/*">
+    </section>
+
+    <section class="section fade" style="text-align:center">
+      <div class="label">04 · JUST BECAUSE</div>
+      <h2>برای تو، اسپایدرجوجه ♡</h2>
+      <p style="color:var(--muted);line-height:2">[ اینجا می‌توانیم بعداً یک جمله‌ی اختصاصی، عکس، یا حتی یک بخش مخفی اضافه کنیم. ]</p>
+      <div class="signature">with a little love</div>
+    </section>
+
+    <footer>ساخته شده برای یک نفر خاص ♡</footer>
+  </main>
+
+<script>
+  const audio = document.getElementById('audio');
+  const playBtn = document.getElementById('playBtn');
+  const audioFile = document.getElementById('audioFile');
+  const photoFile = document.getElementById('photoFile');
+  const photo = document.getElementById('photo');
+  const photoBox = document.getElementById('photoBox');
+
+  playBtn.addEventListener('click', () => {
+    if (!audio.src) return;
+    audio.paused ? audio.play() : audio.pause();
+  });
+  audio.addEventListener('play',()=>playBtn.textContent='Ⅱ');
+  audio.addEventListener('pause',()=>playBtn.textContent='▶');
+
+  audioFile.addEventListener('change', e => {
+    const file=e.target.files[0];
+    if(file) audio.src=URL.createObjectURL(file);
+  });
+  photoFile.addEventListener('change', e => {
+    const file=e.target.files[0];
+    if(file){
+      photo.src=URL.createObjectURL(file);
+      photoBox.classList.add('has-image');
+    }
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('show'); });
+  }, {threshold:.12});
+  document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
